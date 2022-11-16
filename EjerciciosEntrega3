@@ -1,0 +1,1477 @@
+#Apliación Menus
+Clase Aplicación
+package appmenus;
+import javax.swing.JFrame;
+
+public class Aplicacion {
+
+    public static void main(String[] args) {
+        VentanaPrincipal principal = new VentanaPrincipal();
+        principal.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        principal.setVisible(true);
+      
+    }
+}
+Clase Pitágoras
+package appmenus;
+
+
+public class Pitagoras {
+    public static double calcular_hipotenusa(double catetoa, double catetob){
+    double hipotenusa;
+    hipotenusa = Math.sqrt(Math.pow(catetoa,2)+Math.pow(catetob,2));
+    return hipotenusa;
+    }           
+}
+Clase Resistencia
+package appmenus;
+
+public class Resistencia {
+    public static double calcular_resistencia(double voltaje, double corriente){
+        double resistencia;
+        resistencia = voltaje/corriente;
+        return resistencia;
+    }
+}
+Ventana principal
+package appmenus;
+
+
+public class VentanaPrincipal extends javax.swing.JFrame {
+
+
+    public VentanaPrincipal() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        dp = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        MenuSalir = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        MenuCalcularHipotenusa = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        MenuCalcularResistencia = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        MenuVerAcercaDe = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aplicación");
+
+        dp.setBackground(new java.awt.Color(102, 102, 255));
+
+        javax.swing.GroupLayout dpLayout = new javax.swing.GroupLayout(dp);
+        dp.setLayout(dpLayout);
+        dpLayout.setHorizontalGroup(
+            dpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        dpLayout.setVerticalGroup(
+            dpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 277, Short.MAX_VALUE)
+        );
+
+        jMenu1.setText("Archivo");
+
+        MenuSalir.setText("Salir");
+        MenuSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSalirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MenuSalir);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Pitagoras");
+
+        MenuCalcularHipotenusa.setText("Calcular hipotenusa");
+        MenuCalcularHipotenusa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCalcularHipotenusaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MenuCalcularHipotenusa);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Ohm");
+
+        MenuCalcularResistencia.setText("Calcular resistencia");
+        MenuCalcularResistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCalcularResistenciaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(MenuCalcularResistencia);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Acerca de");
+
+        MenuVerAcercaDe.setText("Ver acerca de");
+        MenuVerAcercaDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuVerAcercaDeActionPerformed(evt);
+            }
+        });
+        jMenu4.add(MenuVerAcercaDe);
+
+        jMenuBar1.add(jMenu4);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(dp, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(dp, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void MenuSalirActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        this.dispose();
+    }                                         
+
+    private void MenuCalcularHipotenusaActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        frmCalcularHipotenusa pitagoras = new frmCalcularHipotenusa();
+        dp.add(pitagoras);
+        pitagoras.setClosable(true);
+        pitagoras.setVisible(true);
+    }                                                      
+
+    private void MenuCalcularResistenciaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        frmCalcularResistencia ohm = new frmCalcularResistencia();
+        dp.add(ohm);
+        ohm.setClosable(true);
+        ohm.setVisible(true);
+    }                                                       
+
+    private void MenuVerAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        frmVerAcercaDe acercade = new frmVerAcercaDe();
+        dp.add(acercade);
+        acercade.setClosable(true);
+        acercade.setVisible(true);
+    }                                               
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaPrincipal().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JMenuItem MenuCalcularHipotenusa;
+    private javax.swing.JMenuItem MenuCalcularResistencia;
+    private javax.swing.JMenuItem MenuSalir;
+    private javax.swing.JMenuItem MenuVerAcercaDe;
+    private javax.swing.JDesktopPane dp;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    // End of variables declaration                   
+}
+Formulario Calcular Hipotenusa
+package appmenus;
+
+
+public class frmCalcularHipotenusa extends javax.swing.JInternalFrame {
+
+
+    public frmCalcularHipotenusa() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        btnSalir = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtladoa = new javax.swing.JTextField();
+        txtladob = new javax.swing.JTextField();
+        txthipotenusa = new javax.swing.JTextField();
+
+        setTitle("Calcular Hipotenusa");
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Lado a");
+
+        jLabel2.setText("Lado b");
+
+        jLabel3.setText("Hipotenusa");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCalcular)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))))
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnBorrar)
+                        .addGap(56, 56, 56)
+                        .addComponent(btnSalir))
+                    .addComponent(txthipotenusa, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtladob, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtladoa, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtladoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtladob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txthipotenusa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalir)
+                    .addComponent(btnBorrar)
+                    .addComponent(btnCalcular))
+                .addGap(47, 47, 47))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+    }                                        
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        txtladoa.setText("");
+        txtladob.setText("");
+        txthipotenusa.setText("");
+    }                                         
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        double hipotenusa, catetoa, catetob;
+        catetoa = Double.parseDouble(txtladoa.getText());
+        catetob = Double.parseDouble(txtladob.getText());
+        hipotenusa = Pitagoras.calcular_hipotenusa(catetoa, catetob);
+        txthipotenusa.setText(String.valueOf(hipotenusa));
+    }                                           
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField txthipotenusa;
+    private javax.swing.JTextField txtladoa;
+    private javax.swing.JTextField txtladob;
+    // End of variables declaration                   
+}
+Formulario Calcular resistencia
+package appmenus;
+
+
+public class frmCalcularResistencia extends javax.swing.JInternalFrame {
+
+
+    public frmCalcularResistencia() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        btnSalir = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtcorriente = new javax.swing.JTextField();
+        txtresistencia = new javax.swing.JTextField();
+        txtvoltaje = new javax.swing.JTextField();
+
+        setResizable(true);
+        setTitle("Calcular Resistencia");
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Corriente");
+
+        jLabel2.setText("Voltaje");
+
+        jLabel3.setText("Resistencia");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCalcular)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnBorrar)
+                        .addGap(44, 44, 44)
+                        .addComponent(btnSalir)
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtresistencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                            .addComponent(txtvoltaje, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtcorriente, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(71, 71, 71))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtcorriente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtvoltaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(txtresistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalir)
+                    .addComponent(btnCalcular)
+                    .addComponent(btnBorrar))
+                .addGap(48, 48, 48))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+    }                                        
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        txtcorriente.setText("");
+        txtvoltaje.setText("");
+        txtresistencia.setText("");
+    }                                         
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        double resistencia, voltaje, corriente;
+        corriente = Double.parseDouble(txtcorriente.getText());
+        voltaje = Double.parseDouble(txtvoltaje.getText());
+        resistencia = Resistencia.calcular_resistencia(voltaje, corriente);
+        txtresistencia.setText(String.valueOf(resistencia));
+    }                                           
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField txtcorriente;
+    private javax.swing.JTextField txtresistencia;
+    private javax.swing.JTextField txtvoltaje;
+    // End of variables declaration                   
+}
+Formulario Ver  acerca de
+package appmenus;
+
+public class frmVerAcercaDe extends javax.swing.JInternalFrame {
+
+    public frmVerAcercaDe() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        btnSalir = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+
+        setTitle("Acerca de");
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Este sistema de información fue realizado\npor Santiago Eusse Gil en la asignatura\nPOO...");
+        jScrollPane2.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(btnSalir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addGap(41, 41, 41))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.dispose();
+    }                                        
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea2;
+    // End of variables declaration                   
+}
+
+###Ejercicio 8.2
+Clase Notas
+package Notas;
+
+public class Notas {
+    double[] listaNotas;
+    
+    public Notas(){
+        listaNotas = new double[5];
+    }
+    
+    double calcularPromedio(){
+        double suma= 0;
+        for(int i=1; i < listaNotas.length; i++) {
+            suma = suma + listaNotas[i]; 
+        }
+     
+        return (suma/listaNotas.length);
+    }
+    
+    double calcularDesviación(){
+        double prom = calcularPromedio();
+        
+        double suma= 0;
+        for(int i=0; i<listaNotas.length; i++){
+            suma += Math.pow(listaNotas[i]-prom, 2);
+        }
+        return Math.sqrt(suma/listaNotas.length);
+    }
+    
+    double calcularMenor(){
+        double menor=listaNotas[0];
+        
+        for(int i=0; i < listaNotas.length; i++) { 
+            if (listaNotas[i] < menor) {
+                menor=listaNotas[i];
+            }
+        }
+        return menor;
+    }
+
+    double calcularMayor(){
+        double mayor = listaNotas[0];
+        for(int i=0; i<listaNotas.length;i++){
+            if(listaNotas[i]>mayor){
+                mayor=listaNotas[i];
+            }
+        }
+        return mayor;
+    }
+}
+
+Clase principal
+package Notas;
+
+public class Principal {
+
+    public static void main(String[] args) {
+        VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
+        miVentanaPrincipal.setVisible(true);
+    }
+}
+
+VentanaPrincipal
+package Notas;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class VentanaPrincipal extends javax.swing.JFrame implements ActionListener {
+    
+    
+
+    public VentanaPrincipal() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        promedio = new javax.swing.JLabel();
+        desviación = new javax.swing.JLabel();
+        mayor = new javax.swing.JLabel();
+        menor = new javax.swing.JLabel();
+        campoNota1 = new javax.swing.JTextField();
+        campoNota2 = new javax.swing.JTextField();
+        campoNota3 = new javax.swing.JTextField();
+        campoNota4 = new javax.swing.JTextField();
+        campoNota5 = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+        limpiar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Notas");
+        setPreferredSize(new java.awt.Dimension(280, 380));
+        setSize(new java.awt.Dimension(280, 380));
+
+        jLabel1.setText("Nota 1:");
+        jDesktopPane1.add(jLabel1);
+        jLabel1.setBounds(20, 20, 135, 23);
+
+        jLabel2.setText("Nota 2:");
+        jDesktopPane1.add(jLabel2);
+        jLabel2.setBounds(20, 50, 135, 23);
+
+        jLabel3.setText("Nota 3:");
+        jDesktopPane1.add(jLabel3);
+        jLabel3.setBounds(20, 80, 135, 23);
+
+        jLabel4.setText("Nota 4:");
+        jDesktopPane1.add(jLabel4);
+        jLabel4.setBounds(20, 110, 135, 23);
+
+        jLabel5.setText("Nota 5:");
+        jDesktopPane1.add(jLabel5);
+        jLabel5.setBounds(20, 140, 135, 23);
+
+        promedio.setText("Promedio =");
+        jDesktopPane1.add(promedio);
+        promedio.setBounds(20, 210, 135, 23);
+
+        desviación.setText("Desviación =");
+        jDesktopPane1.add(desviación);
+        desviación.setBounds(20, 240, 200, 23);
+
+        mayor.setText("Nota mayor =");
+        jDesktopPane1.add(mayor);
+        mayor.setBounds(20, 270, 120, 23);
+
+        menor.setText("Nota menor =");
+        jDesktopPane1.add(menor);
+        menor.setBounds(20, 300, 120, 23);
+        jDesktopPane1.add(campoNota1);
+        campoNota1.setBounds(105, 20, 135, 23);
+        jDesktopPane1.add(campoNota2);
+        campoNota2.setBounds(105, 50, 135, 23);
+        jDesktopPane1.add(campoNota3);
+        campoNota3.setBounds(105, 80, 135, 22);
+        jDesktopPane1.add(campoNota4);
+        campoNota4.setBounds(105, 110, 135, 23);
+        jDesktopPane1.add(campoNota5);
+        campoNota5.setBounds(105, 140, 135, 23);
+
+        calcular.setText("Calcular");
+        jDesktopPane1.add(calcular);
+        calcular.setBounds(20, 170, 100, 23);
+        calcular.addActionListener(this);
+
+        limpiar.setText("Limpiar");
+        jDesktopPane1.add(limpiar);
+        limpiar.setBounds(125, 170, 80, 23);
+        limpiar.addActionListener(this);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new VentanaPrincipal().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoNota1;
+    private javax.swing.JTextField campoNota2;
+    private javax.swing.JTextField campoNota3;
+    private javax.swing.JTextField campoNota4;
+    private javax.swing.JTextField campoNota5;
+    private javax.swing.JLabel desviación;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton limpiar;
+    private javax.swing.JLabel mayor;
+    private javax.swing.JLabel menor;
+    private javax.swing.JLabel promedio;
+    // End of variables declaration                   
+
+    @Override
+    public void actionPerformed(ActionEvent evento) {
+       if (evento.getSource() == calcular) {
+           Notas notas = new Notas();
+           notas.listaNotas[0] = Double.parseDouble(campoNota1.getText());
+           notas.listaNotas[1] = Double.parseDouble(campoNota2.getText());
+           notas.listaNotas[2] = Double.parseDouble(campoNota3.getText());
+           notas.listaNotas[3] = Double.parseDouble(campoNota4.getText());
+           notas.listaNotas[4] = Double.parseDouble(campoNota5.getText());
+           notas.calcularPromedio();
+           notas.calcularDesviación();
+           promedio.setText("Promedio = " + String.valueOf(String.format("%.2f",notas.calcularPromedio())));
+           double desv = notas.calcularDesviación();
+           desviación.setText("Desviación estándar = " + String.format("%.2f", desv));
+           mayor.setText("Valor mayor = " + String.valueOf(notas.calcularMayor()));
+           menor.setText("Valor menor = " + String.valueOf(notas.calcularMenor()));
+       }
+       if (evento.getSource() == limpiar) {
+            campoNota1.setText("");
+            campoNota2.setText("");
+            campoNota3.setText("");
+            campoNota4.setText("");
+            campoNota5.setText("");
+       }
+    }
+}
+
+###############Ejercicio 8.3
+Clase Cilindro
+package Figuras;
+
+public class Cilindro extends FiguraGeométrica{
+    private double radio;
+    private double altura;
+    
+    public Cilindro(double radio, double altura){
+        this.radio=radio;
+        this.altura=altura;
+        this.setVolumen(calcularVolumen());
+        this.setSuperficie(calcularSuperficie());
+    }
+    
+    public double calcularVolumen(){
+        double volumen = Math.PI*altura*Math.pow(radio,2.0);
+        return volumen;
+    }
+    
+    public double calcularSuperficie(){
+        double áreaLadoA = 2.0*Math.PI*radio*altura;
+        double áreaLadoB = 2.0*Math.PI*Math.pow(radio,2.0);
+        return áreaLadoA+áreaLadoB;
+    }
+}
+Clase Esfera
+package Figuras;
+
+
+public class Esfera extends FiguraGeométrica {
+    private double radio;
+    
+    public Esfera(double radio){
+        this.radio=radio;
+        this.setVolumen(calcularVolumen());
+        this.setSuperficie(calcularSuperficie());
+    }
+    public double calcularVolumen(){
+        double volumen = 1.333*Math.PI*Math.pow(this.radio,3.0);
+        return volumen;
+    }
+    
+    public double calcularSuperficie(){
+        double superficie = 4.0*Math.PI*Math.pow(this.radio,2.0);
+        return superficie;
+    }
+}
+Clase FiguraGeometrica
+package Figuras;
+
+
+public class FiguraGeométrica {
+    private double volumen;
+    private double superficie;
+    
+    public void setVolumen(double volumen){
+        this.volumen = volumen;
+    }
+    
+    public void setSuperficie(double superficie){
+        this.superficie=superficie;
+    }
+    
+    public double getVolumen(){
+        return this.volumen;
+    }
+    
+    public double getSuperficie(){
+        return this.superficie;
+    }
+}
+Clase Pirámide
+package Figuras;
+
+public class Pirámide extends FiguraGeométrica {
+    private double base;
+    private double altura;
+    private double apotema;
+    
+    public Pirámide(double base, double altura, double apotema){
+        this.base=base;
+        this.altura=altura;
+        this.apotema=apotema;
+        this.setVolumen(calcularVolumen());
+        this.setSuperficie(calcularSuperficie());
+    }
+    
+    public double calcularVolumen() {
+        double volumen = (Math.pow(base, 2.0) * altura) / 3.0;
+        return volumen;
+    }
+    
+    public double calcularSuperficie() {
+        double áreaBase = Math.pow(base, 2.0);
+        double áreaLado = 2.0 *base * apotema;
+        return áreaBase + áreaLado;
+    }
+}
+Clase Principal
+package Figuras;
+
+
+public class Principal {
+    public static void main(String[] args) {
+        VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal();
+        miVentanaPrincipal.setVisible(true);
+        miVentanaPrincipal.setResizable(false);
+    }
+}
+VentanaCilindro
+package Figuras;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class VentanaCilindro extends javax.swing.JFrame implements ActionListener{
+
+
+    public VentanaCilindro() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        radio = new javax.swing.JLabel();
+        altura = new javax.swing.JLabel();
+        superficie = new javax.swing.JLabel();
+        volumen = new javax.swing.JLabel();
+        campoRadio = new javax.swing.JTextField();
+        campoAltura = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cilindro");
+        setResizable(false);
+        setSize(new java.awt.Dimension(280, 210));
+
+        radio.setText("Radio(cms):");
+        radio.setBounds(20, 20, 135, 23);
+        jDesktopPane1.add(radio);
+        radio.setBounds(20, 20, 135, 23);
+
+        altura.setText("Altura(cms):");
+        jDesktopPane1.add(altura);
+        altura.setBounds(20, 50, 135, 23);
+
+        superficie.setText("Superfice(cm2):");
+        jDesktopPane1.add(superficie);
+        superficie.setBounds(20, 140, 135, 23);
+
+        volumen.setText("Volumen(cm3):");
+        jDesktopPane1.add(volumen);
+        volumen.setBounds(20, 110, 135, 23);
+
+        campoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoRadioActionPerformed(evt);
+            }
+        });
+        jDesktopPane1.add(campoRadio);
+        campoRadio.setBounds(100, 20, 135, 23);
+        jDesktopPane1.add(campoAltura);
+        campoAltura.setBounds(100, 50, 135, 23);
+
+        calcular.setText("Calcular");
+        calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcularActionPerformed(evt);
+            }
+        });
+        jDesktopPane1.add(calcular);
+        calcular.setBounds(100, 80, 135, 23);
+        calcular.addActionListener(this);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    private void campoRadioActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void calcularActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    
+            
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaCilindro().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel altura;
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoAltura;
+    private javax.swing.JTextField campoRadio;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel radio;
+    private javax.swing.JLabel superficie;
+    private javax.swing.JLabel volumen;
+    // End of variables declaration                   
+
+ 
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        Cilindro cilindro;
+        boolean error= false;
+        double radio=0;
+        double altura=0;
+        
+        try{
+            radio= Double.parseDouble(campoRadio.getText());
+            altura= Double.parseDouble(campoAltura.getText());
+            cilindro = new Cilindro(radio, altura);
+            
+            volumen.setText("Volumen(cm3):"+ String.format("%.2f", cilindro.calcularVolumen()));
+            superficie.setText("Superficie(cm2):"+String.format("%.2f",cilindro.calcularSuperficie()));
+                    
+        }catch(Exception e){
+            error=true;
+        }finally{
+            if(error){
+                JOptionPane.showMessageDialog(null,"Campo nulo o error en formato de numero","Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+}
+VentanaEsfera
+package Figuras;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class VentanaEsfera extends javax.swing.JFrame implements ActionListener  {
+
+    public VentanaEsfera() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        superficie = new javax.swing.JLabel();
+        campoRadio = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+        radio = new javax.swing.JLabel();
+        volumen = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Esfera");
+        setResizable(false);
+        setSize(new java.awt.Dimension(280, 200));
+
+        superficie.setText("Superficie (cm2):");
+        jDesktopPane1.add(superficie);
+        superficie.setBounds(20, 120, 135, 23);
+        jDesktopPane1.add(campoRadio);
+        campoRadio.setBounds(100, 20, 135, 23);
+
+        calcular.setText("Calcular");
+        jDesktopPane1.add(calcular);
+        calcular.setBounds(100, 50, 135, 23);
+        calcular.addActionListener(this);
+
+        radio.setText("Radio (cms):");
+        jDesktopPane1.add(radio);
+        radio.setBounds(20, 20, 135, 23);
+
+        volumen.setText("Volumen (cm3):");
+        jDesktopPane1.add(volumen);
+        volumen.setBounds(20, 90, 135, 23);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+        );
+
+        jDesktopPane1.getAccessibleContext().setAccessibleDescription("");
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaEsfera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaEsfera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaEsfera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaEsfera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaEsfera().setVisible(true);
+            }
+        });
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource()==calcular){
+            boolean error=false;
+            Esfera esfera;
+            try{
+                double radio= Double.parseDouble(campoRadio.getText());
+                esfera = new Esfera(radio);
+                volumen.setText("Volumen(cm3):"+String.format("%.2f",esfera.calcularVolumen()));
+                superficie.setText("Supeficie(cm2):"+String.format("%.2f",esfera.calcularSuperficie()));
+            }catch(Exception e){
+                error=true;
+            }finally{
+                if(error){
+                    JOptionPane.showMessageDialog(null,"Campo nulo o error en formato de número","Error", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            }
+        }
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoRadio;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel radio;
+    private javax.swing.JLabel superficie;
+    private javax.swing.JLabel volumen;
+    // End of variables declaration                   
+}
+VentanaPirámide
+package Figuras;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class VentanaPiramide extends javax.swing.JFrame implements ActionListener {
+
+
+    public VentanaPiramide() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        base = new javax.swing.JLabel();
+        altura = new javax.swing.JLabel();
+        apotema = new javax.swing.JLabel();
+        volumen = new javax.swing.JLabel();
+        superficie = new javax.swing.JLabel();
+        campoBase = new javax.swing.JTextField();
+        campoAltura = new javax.swing.JTextField();
+        campoApotema = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pirámide");
+        setResizable(false);
+        setSize(new java.awt.Dimension(280, 240));
+
+        base.setText("Base (cms):");
+        jDesktopPane1.add(base);
+        base.setBounds(20, 20, 135, 23);
+
+        altura.setText("Altura (cms):");
+        jDesktopPane1.add(altura);
+        altura.setBounds(20, 50, 135, 23);
+
+        apotema.setText("Apotema (cms):");
+        jDesktopPane1.add(apotema);
+        apotema.setBounds(20, 80, 135, 23);
+
+        volumen.setText("Volumen (cm3):");
+        jDesktopPane1.add(volumen);
+        volumen.setBounds(20, 140, 135, 23);
+
+        superficie.setText("Superfice (cm2):");
+        jDesktopPane1.add(superficie);
+        superficie.setBounds(20, 170, 135, 23);
+        jDesktopPane1.add(campoBase);
+        campoBase.setBounds(120, 20, 135, 23);
+        jDesktopPane1.add(campoAltura);
+        campoAltura.setBounds(120, 50, 135, 23);
+        jDesktopPane1.add(campoApotema);
+        campoApotema.setBounds(120, 80, 135, 23);
+
+        calcular.setText("Calcular");
+        calcular.addActionListener(this);
+        jDesktopPane1.add(calcular);
+        calcular.setBounds(120, 110, 135, 23);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaPiramide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaPiramide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaPiramide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaPiramide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaPiramide().setVisible(true);
+            }
+        });
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        Pirámide pirámide;
+        boolean error= false;
+        double base=0;
+        double altura=0;
+        double apotema=0;
+        try {
+            base = Double.parseDouble(campoBase.getText());
+            altura = Double.parseDouble(campoAltura.getText());
+            pirámide = new Pirámide(base,altura,apotema);
+            volumen.setText("Volumen (cm3):"+ String.format("%.2f",pirámide.calcularVolumen()));
+            superficie.setText("Superficie(cm2):"+String.format("%.2f",pirámide.calcularSuperficie()));
+        }catch (Exception e){
+            error=true;
+        }finally{
+            if (error){
+                JOptionPane.showMessageDialog(null, "Campo nulo o error en formato de número","Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel altura;
+    private javax.swing.JLabel apotema;
+    private javax.swing.JLabel base;
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoAltura;
+    private javax.swing.JTextField campoApotema;
+    private javax.swing.JTextField campoBase;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel superficie;
+    private javax.swing.JLabel volumen;
+    // End of variables declaration                   
+}
+
+VentanaPrincipal
+
+package Figuras;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class VentanaPrincipal extends javax.swing.JFrame implements ActionListener {
+
+    /**
+     * Creates new form VentanaPrincipal
+     */
+    public VentanaPrincipal() {
+        initComponents();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        pirámide = new javax.swing.JButton();
+        esfera = new javax.swing.JButton();
+        cilindro = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Figuras");
+        setResizable(false);
+        setSize(new java.awt.Dimension(350, 160));
+
+        pirámide.setText("Pirámide");
+        jDesktopPane1.add(pirámide);
+        pirámide.setBounds(225, 50, 100, 23);
+        pirámide.addActionListener(this);
+
+        esfera.setText("Esfera");
+        jDesktopPane1.add(esfera);
+        esfera.setBounds(125, 50, 80, 23);
+        esfera.addActionListener(this);
+
+        cilindro.setText("Cilindro");
+        jDesktopPane1.add(cilindro);
+        cilindro.setBounds(20, 50, 80, 23);
+        cilindro.addActionListener(this);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaPrincipal().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton cilindro;
+    private javax.swing.JButton esfera;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JButton pirámide;
+    // End of variables declaration                   
+
+    @Override
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource()==esfera){
+            VentanaEsfera esfera = new VentanaEsfera();
+            esfera.setVisible(true);
+        }
+        if (evento.getSource()==cilindro){
+            VentanaCilindro cilindro = new VentanaCilindro();
+            cilindro.setVisible(true);
+        }
+        if (evento.getSource()== pirámide){
+            VentanaPiramide pirámide = new VentanaPiramide();
+            pirámide.setVisible(true);
+        }
+    }
+}
